@@ -1,4 +1,4 @@
-package co.devskills;
+package co.devskills.springbootboilerplate;
 import co.devskills.springbootboilerplate.controller.LookupController;
 import co.devskills.springbootboilerplate.dto.CreditData;
 import co.devskills.springbootboilerplate.dto.LookupResponse;
@@ -16,7 +16,6 @@ import java.util.List;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.mockito.ArgumentMatchers.anyString;
 
 @WebMvcTest(LookupController.class)
 class LookupControllerTest {
@@ -56,7 +55,7 @@ class LookupControllerTest {
         mockMvc.perform(get("/api/v1/lookup/99"))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.message")
-                        .value("Customer with ID 99 not found."));
+                        .value("Customer not found with ID: 99"));
     }
 
     @Test

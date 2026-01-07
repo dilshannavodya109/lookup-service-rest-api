@@ -1,4 +1,4 @@
-package co.devskills;
+package co.devskills.springbootboilerplate;
 
 import co.devskills.springbootboilerplate.dto.CreditData;
 import co.devskills.springbootboilerplate.dto.LookupResponse;
